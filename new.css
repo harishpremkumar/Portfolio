@@ -1,0 +1,405 @@
+html {
+   scroll-behavior: smooth;
+}
+
+body {
+   font-family: Arial, sans-serif;
+   margin: 0;
+   padding: 0;
+   background-color: #003366;
+   color: #fff;
+}
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+/* Header */
+.header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   background-color: #fff;
+   color: #003366;
+   padding: 20px;
+   position: sticky;
+   top: 0;
+   z-index: 10;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header__logo {
+   font-family: 'Brush Script MT', cursive;
+   font-size: 2em;
+   font-weight: bold;
+   color: #0077ff;
+}
+
+.header__nav a, .header__social a {
+   margin: 0 10px;
+   color: #003366;
+   text-decoration: none;
+   transition: color 0.3s ease-in-out;
+}
+
+.header__nav a:hover, .header__social a:hover {
+   color: #0077ff;
+}
+
+/* Main Section */
+.main {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-around;
+   align-items: center;
+   height: calc(100vh - 80px);
+   background-color: #fff;
+   color: #003366;
+   padding: 20px;
+   /* justify-content: center; */
+   text-align: center;
+}
+
+.main__content {
+   width: 100%;
+   max-width: 600px;
+   text-align: center;
+}
+
+.main__content h1 {
+   font-size: 3em;
+   color: #000;
+   margin: 10px 0;
+}
+
+.user_name {
+   font-family: Arial, sans-serif;
+   font-size: 4em;
+   background: linear-gradient(to right, #ff0080, #8000ff, #00ffff);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   background-clip: text;
+   color: transparent;
+   margin: 15px 0;
+}
+
+.circle-container {
+   position: relative;
+   width: 300px; /* Diameter of the circle */
+   height: 300px; /* Same as width for a perfect circle */
+   border-radius: 60%; /* Makes the border circular */
+   background: linear-gradient(to right, #ff0080, #8000ff, #00ffff); /* Gradient border color */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   overflow: hidden; /* Ensures no part of the image leaks out */
+}
+
+.circle-container::before {
+   content: '';
+   position: absolute;
+   inset: 5px; /* Creates spacing for the gradient border */
+   border-radius: 50%; /* Ensures the inner content is also circular */
+   background: #fff; /* Inner background color for contrast */
+   z-index: 1;
+}
+
+.profile-image {
+   position: relative;
+   width: 90%; /* Adjust image size inside the container */
+   height: 90%; /* Same as width to maintain aspect ratio */
+   border-radius: 50%; /* Makes the image circular */
+   object-fit: cover; /* Ensures the image scales properly without distortion */
+   z-index: 2; /* Keeps the image above the inner white layer */
+}
+
+
+
+
+/* About Section */
+#about {
+   padding: 50px 20px;
+   background-color: #f4f4f4;
+   color: #333;
+   justify-content: center;
+   text-align: center;
+}
+
+#about h1 {
+   color: #4c4c9d;
+   font-size: 2.5em;
+   margin-bottom: 20px;
+}
+
+#about p {
+   line-height: 1.6;
+   margin-bottom: 20px;
+}
+
+#about .work-experience, #about .education {
+   margin-bottom: 30px;
+}
+
+#about .work-experience ul, #about .education ul {
+   list-style: none;
+   padding: 0;
+}
+
+#about .work-experience li, #about .education li {
+   margin-bottom: 15px;
+   padding: 15px;
+   border: 1px solid #ddd;
+   border-radius: 5px;
+   background-color: #fff;
+}
+
+#about .work-experience h3, #about .education h3 {
+   font-size: 1.4em;
+   margin-bottom: 5px;
+}
+
+#about .work-experience p, #about .education p {
+   font-size: 1em;
+   margin: 5px 0;
+   color: #555;
+}
+
+#about .work-experience i, #about .education i {
+   color: #4c4c9d;
+   margin-right: 8px;
+}
+
+#about .About li, #about li {
+   margin-bottom: 15px;
+   padding: 15px;
+   border: 1px solid #ddd;
+   border-radius: 5px;
+   background-color: #fff;
+}
+
+
+
+
+/* Tech Stack Section */
+#tech-stack {
+   text-align: center;
+   justify-content: center;
+   /* text-align: center; */
+   padding: 2rem;
+   background-color: #fff;
+   color: #003366;
+}
+
+#tech-stack h1 {
+   font-size: 2rem;
+   color: #4c4c9d;
+}
+
+#tech-stack p {
+   font-size: 1rem;
+   color: #666;
+}
+
+.tech-grid {
+   display: grid;
+   grid-template-columns: repeat(8, 1fr); /* 10 columns per row */
+   gap: 1.5rem; /* Space between the items */
+   margin-top: 2rem;
+   justify-content: center;
+
+ }
+
+ 
+ 
+ .tech-grid img {
+   width: 120px;
+   height: 120px;
+   object-fit: contain; /* Ensures the image fits within the bounding box without distortion */
+   margin: auto;
+   border-radius: 10px; /* Optional: Adds a slight rounded effect */
+   background-color: #fff;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+ }
+ 
+ .tech-grid img:hover {
+   transform: scale(1.1);
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+ }
+ 
+
+/* Responsive Design */
+@media (max-width: 768px) {
+   .main {
+       flex-direction: column;
+       text-align: center;
+   }
+
+   .main__content {
+       width: 100%;
+   }
+
+   .circle-container {
+       margin: 20px auto;
+   }
+}
+
+@media (max-width: 768px) {
+   .tech-grid {
+     grid-template-columns: repeat(5, 1fr); /* Show 5 images per row */
+   }
+ }
+ 
+ @media (max-width: 420px) {
+   .tech-grid {
+     grid-template-columns: repeat(3, 1fr); /* Show 3 images per row */
+   }
+ }
+
+
+/* Contact Section */
+#contact {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   height: 100vh; /* Full screen height */
+   text-align: center;
+   background-color: #fff;
+}
+
+#contact h1 {
+   color: #003366;
+   font-size: 2.5em;
+   margin-bottom: 20px;
+   font-weight: bold;
+}
+
+#contact p {
+   font-size: 2.5em;
+   margin-bottom: 20px;
+   font-weight: bold;
+   background: linear-gradient(to right, #ff0080, #8000ff, #00ffff);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   background-clip: text;
+   color: transparent; /* Makes the gradient text visible */
+   
+   cursor: pointer;
+   transition: opacity 0.3s ease-in-out;
+}
+
+#contact p:hover {
+   opacity: 0.7;
+}
+#projects {
+   padding: 50px 20px;
+   text-align: center;
+   background-color: #f4f4f4;
+ }
+ 
+ #projects h1 {
+   font-size: 2.5em;
+   color: #4c4c9d;
+ }
+ 
+ #projects p {
+   font-size: 1.2em;
+   color: #666;
+   margin-bottom: 40px;
+ }
+ 
+ .projects-grid {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr); /* 4 boxes in the first row */
+   gap: 90px;
+   justify-items: center;
+ }
+ 
+ /* For medium screens (tablet) */
+ @media (max-width: 1024px) {
+   .projects-grid {
+     grid-template-columns: repeat(2, 1fr); /* 2 boxes per row */
+   }
+ }
+ 
+ /* For small screens (mobile) */
+ @media (max-width: 768px) {
+   .projects-grid {
+     grid-template-columns: repeat(1, 1fr); /* 1 box per row */
+   }
+ }
+ 
+ .project-card {
+   background: #fff;
+   border-radius: 10px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   overflow: hidden;
+   width: 135%;
+   height: 70%;
+   max-width: 300px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+   perspective: 1000px; /* Add perspective for the 3D effect */
+ }
+ 
+ .project-card:hover {
+   transform: scale(1.1);
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+ }
+ 
+ .project-card img {
+   width: 100%;
+   height: 180px;
+   object-fit: cover;
+   transition: transform 0.3s ease;
+ }
+
+
+ 
+ 
+ .project-content {
+   padding: 20px;
+ }
+ 
+ .project-content h4 {
+   font-size: 1.5em;
+   margin-bottom: 10px;
+   color: #333;
+ }
+ 
+ .project-content p {
+   font-size: 0.4em;
+   color: #555;
+   line-height: 1.6;
+ }
+ 
+ .project-links {
+   display: flex;
+   justify-content: space-between;
+   margin-top: 15px;
+ }
+ 
+ .project-links .btn {
+   text-decoration: none;
+   font-size: 0.9em;
+   color: #4c4c9d;
+   background-color: #f4f4f4;
+   padding: 8px 12px;
+   border-radius: 5px;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+   transition: transform 0.3s ease-in-out;
+ }
+ 
+ .project-links .btn:hover {
+   transform: scale(1.1);
+   background-color: #e4e4ff;
+ }
+ 
+ 
+
+
+ 
