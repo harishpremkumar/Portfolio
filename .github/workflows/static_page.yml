@@ -38,7 +38,7 @@ jobs:
           mkdir -p _site
           cp index.html Portfolio.css _site/
           cp -r Images _site/
-          cp "Harish P.docx" _site/
+          cp "HarishP_Resume.docx" _site/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
